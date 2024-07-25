@@ -3,6 +3,88 @@
 This project aims to classify granular materials and identify particle size distribution using deep learning techniques. Specifically, we use Convolutional Neural Networks (CNN) to predict the average particle size and standard deviation from images of granular materials.
 
 ## Project Overview
+![未命名绘图 drawio](https://github.com/user-attachments/assets/00ec3e3a-c5d5-4236-b556-2572ea1ddf35)
+
+
+# Automated Particle Size Detection Using Luxonis OAK-D Pro Camera and ROS
+
+## Introduction
+This project aims to automate the process of particle size detection in a material pile using a Luxonis OAK-D Pro camera mounted on a mobile robot. The camera's depth sensing capability ensures the camera maintains a fixed distance of 30mm from the material pile, and an RGB image is captured at this distance. A pre-trained CNN model is then used to predict particle sizes from the captured images.
+
+## System Components
+1. **Luxonis OAK-D Pro Camera**: Provides both RGB and depth information.
+2. **Mobile Robot**: Moves the camera to the material pile.
+3. **ROS (Robot Operating System)**: Manages the robot's movement and sensor data processing.
+4. **Pre-trained CNN Model**: Predicts particle sizes from the RGB images.
+5. **Computer**: Runs the ROS nodes and processes the data.
+
+## Software and Libraries Installation
+1. **Install ROS**: Follow the installation instructions for your operating system from the official ROS website.
+2. **Install Luxonis DepthAI SDK**: Follow the installation instructions from the [official DepthAI GitHub repository](https://github.com/luxonis/depthai).
+3. **Install PyTorch and necessary Python libraries**: Use the command: `pip install torch torchvision depthai`
+
+## Launch Luxonis Camera Node
+Start the Luxonis camera node to capture depth and RGB images using the command:
+```bash
+python3 depthai_demo.py -s color depth
+```
+
+## Develop the ROS Node for Image Processing and Distance Checking
+1. **Create a new ROS package**:
+    ```bash
+    cd ~/catkin_ws/src
+    catkin_create_pkg rockpile_inspection roscpp sensor_msgs cv_bridge image_transport message_filters
+    cd ..
+    catkin_make
+    ```
+2. **Add dependencies** in `package.xml`.
+3. **Update CMakeLists.txt** to include the necessary dependencies and compilation instructions.
+4. **Write the image processing node** to subscribe to the depth and RGB image topics, check the depth information, and use the pre-trained model for particle size prediction.
+5. **Compile and run the ROS node** using the following commands:
+    ```bash
+    cd ~/catkin_ws
+    catkin_make
+    source devel/setup.bash
+    rosrun rockpile_inspection inspect_rockpile_node
+    ```
+
+## Controlling the Mobile Robot
+1. **Create a ROS node to control the robot**: This node will move the robot to the material pile and stop when the camera is 30mm away from the pile.
+2. **Integrate robot control with the image processing node**: Modify the `RockpileInspector` class to include commands to stop the robot when the desired distance is achieved.
+
+## Particle Size Detection Approaches
+1. **Segmentation-based Approach**:
+    - Pre-process Image
+    - Apply Segmentation Model
+    - Identify and Measure Particles
+    - Post-process and Output Results
+2. **Regression-based Approach**:
+    - Pre-process Image
+    - Extract Features
+    - Apply Regression Model
+    - Predict Particle Size
+    - Post-process and Output Results
+3. **Classification-based Approach**:
+    - Pre-process Image
+    - Apply Classification Model
+    - Classify Particles by Size Range
+    - Post-process and Output Results
+
+## Execution Flow
+1. **Robot Moves to Material Pile**
+2. **Camera Ensures 30mm Distance**
+3. **Capture RGB Image**
+4. **Process Image with Pre-trained CNN Model**
+5. **Predict Particle Size**
+6. **Display Results**
+
+## Conclusion
+By following these steps, you can utilize the Luxonis OAK-D Pro camera to maintain a precise distance from the material pile and capture RGB images for particle size prediction using a pre-trained CNN model. The integration with ROS ensures seamless control and processing within a robotic system.
+
+# . 
+# . 
+# . 
+# . 
 
 ### Objectives
 1. Segment and extract features from images of granular materials.
