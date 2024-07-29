@@ -19,12 +19,17 @@ The primary goal of this project is to automate the process of particle size det
 
 ### 1. **Regression-based Approach**:
 1. Pre-process Image
-2. Extract Features
+2. labeling grain size
+    1. Labeling with granularity values extracted by SAM and opencv
+    2. Labeling with the median of the product's particle size values
 3. Train and Apply Regression Model
 4. Predict Particle Size
 5. Post-process and Output Results
-
-
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://github.com/user-attachments/assets/7ad68d11-1312-491f-a257-441efd716114" alt="prediction_scatter_plot" width="30%"/>
+    <img src="https://github.com/user-attachments/assets/11553956-3d67-481e-8b06-957c6109bf58" alt="loss_curves" width="30%"/>
+    <img src="https://github.com/user-attachments/assets/daa741c1-3606-40fc-8a15-4b32f9bcf3d5" alt="val_mse_curves" width="30%"/>
+</div>
 
 
 ##### Methodology
@@ -46,10 +51,44 @@ The primary goal of this project is to automate the process of particle size det
 - **Generalization**: The model might struggle to generalize to images with grain sizes significantly different from those in the training set.
 
 ### 2. **Classification-based Approach**:
-    - Pre-process Image
-    - Apply Classification Model
-    - Classify Particles by Size Range
-    - Post-process and Output Results
+1. Pre-process Image
+2. Apply Classification Model(ResNet50, VGG16)
+3. Classify Particles by Size Range
+
+#### Small (0-12mm)
+| Product Name               | Particle Size | Source         | Data Quantity |
+|----------------------------|---------------|----------------|---------------|
+| Kies_1-3mm                 | 1-3mm         | Aachen OBI     | 1000          |
+| Splitt_2-5mm               | 2-5mm         | Aachen Bauhaus | 1000          |
+| Kies_2-8mm                 | 2-8mm         | Aachen Bauhaus | 1000          |
+| Marmorsplitt_7-12mm        | 7-12mm        | Aachen Bauhaus | 1000          |
+| Marmorsplitt_Donaublau_8-12mm | 8-12mm    | Aachen Bauhaus | 1000          |
+| granitsplitt_8-12mm        | 8-12mm        | Aachen Bauhaus | 1000          |
+| Basaltsplitt_8-12mm        | 8-12mm        | Aachen Bauhaus | 1000          |
+
+#### Medium (7-32mm)
+| Product Name               | Particle Size | Source         | Data Quantity |
+|----------------------------|---------------|----------------|---------------|
+| Marmorkiesel_Weiss_7-15mm  | 7-15mm        | Aachen Bauhaus | 1000          |
+| Quarzkies_Rund_Hell_8-16mm | 8-16mm        | Aachen Bauhaus | 1000          |
+| Kies_8-16mm                | 8-16mm        | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Weiss_15-25mm | 15-25mm       | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Gruen_15-25mm | 15-25mm       | Aachen Bauhaus | 1000          |
+| Quarzkies_Rund_Hell_16-32mm| 16-32mm       | Aachen Bauhaus | 1000          |
+| Kies_16-32mm               | 16-32mm       | Aachen Bauhaus | 1000          |
+
+#### Large (22-60mm)
+| Product Name               | Particle Size | Source         | Data Quantity |
+|----------------------------|---------------|----------------|---------------|
+| Marmorkiesel_Weiss_25-40mm | 25-40mm       | Aachen Bauhaus | 1000          |
+| Schieferplaettchen_22-40mm | 22-40mm       | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Weiss_40-60mm | 40-60mm       | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Schwarz_40-60mm| 40-60mm      | Aachen Bauhaus | 1000          |
+| Bruchsteine_Veronarot_30-60mm | 30-60mm    | Aachen Bauhaus | 1000          |
+
+4. Post-process and Output Results
+
+![loss_accuracy_curves_12_epochs](https://github.com/user-attachments/assets/d57fa104-32da-4386-a09b-1cd9795fdf03)
 
 
 ### 3. **Segmentation-based Approach**:
@@ -114,6 +153,30 @@ The primary goal of this project is to automate the process of particle size det
 
 ### Dataset
 The dataset consists of images of various granular materials. Each image is labeled with the average particle size and standard deviation. The images are pre-processed and augmented to improve the robustness of the model.
+#### Product Information
+
+| Product Name                    | Particle Size | Source         | Data Quantity |
+|---------------------------------|---------------|----------------|---------------|
+| Marmorsplitt_7-12mm             | 7-12mm        | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Weiss_7-15mm       | 7-15mm        | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Weiss_15-25mm      | 15-25mm       | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Weiss_25-40mm      | 25-40mm       | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Weiss_40-60mm      | 40-60mm       | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Schwarz_40-60mm    | 40-60mm       | Aachen Bauhaus | 1000          |
+| Marmorsplitt_Veronarot_9-12mm   | 9-12mm        | Aachen Bauhaus | 1000          |
+| Marmorsplitt_Donaublau_8-12mm   | 8-12mm        | Aachen Bauhaus | 1000          |
+| Marmorkiesel_Gruen_15-25mm      | 15-25mm       | Aachen Bauhaus | 1000          |
+| Schieferplaettchen_22-40mm      | 22-40mm       | Aachen Bauhaus | 1000          |
+| Bruchsteine_Veronarot_30-60mm   | 30-60mm       | Aachen Bauhaus | 1000          |
+| Quarzkies_Rund_Hell_16-32mm     | 16-32mm       | Aachen Bauhaus | 1000          |
+| Quarzkies_Rund_Hell_8-16mm      | 8-16mm        | Aachen Bauhaus | 1000          |
+| Kies_2-8mm                      | 2-8mm         | Aachen Bauhaus | 1000          |
+| Kies_8-16mm                     | 8-16mm        | Aachen Bauhaus | 1000          |
+| Kies_16-32mm                    | 16-32mm       | Aachen Bauhaus | 1000          |
+| Basaltsplitt_8-12mm             | 8-12mm        | Aachen Bauhaus | 1000          |
+| granitsplitt_8-12mm             | 8-12mm        | Aachen Bauhaus | 1000          |
+| Splitt_2-5mm                    | 2-5mm         | Aachen Bauhaus | 1000          |
+| Kies_1-3mm                      | 1-3mm         | Aachen OBI     | 1000          |
 
 ### Methodology
 1. **Segmentation and Feature Extraction**: Using the SAM (Segment Anything Model) to segment particles and extract geometric features.
