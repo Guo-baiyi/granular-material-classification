@@ -5,7 +5,8 @@
 This project aims to classify granular materials and identify particle size distribution using deep learning techniques. We employ Convolutional Neural Networks (CNN) and the Segment Anything Model (SAM) to predict the average particle size and standard deviation from images of granular materials.
 
 ## Complete Project Overview
-![未命名绘图 (1)](https://github.com/user-attachments/assets/92a0ab52-7d88-4c8c-b625-e3846443224b)
+
+![未命名绘图 drawio (1)](https://github.com/user-attachments/assets/d07802a1-9712-4fba-b35f-c2ac5ce1ff33)
 
 
 The primary goal of this project is to automate the process of particle size detection in a material pile. This is achieved using a Luxonis OAK-D Pro camera mounted on a mobile robot. The camera's depth sensing capability ensures it maintains a fixed distance of 30mm from the material pile, capturing an RGB image at this distance. A pre-trained CNN model is then used to predict particle sizes from the captured images.
@@ -22,9 +23,13 @@ The primary goal of this project is to automate the process of particle size det
     <img src="https://github.com/user-attachments/assets/2f8d2cc6-4aaf-4f1d-af34-364ba35a0d2c" alt="Colored Segments" width="30%"/>
     <img src="https://github.com/user-attachments/assets/3c2ae483-e64e-407c-a944-777d7bbeb184" alt="Contours" width="30%"/>
 </div>
+
 3. Identify and Measure Particles - OpenCV
 
+
 4. Post-process and Output Results
+
+
 ![image](https://github.com/user-attachments/assets/b9fa4502-3fdb-4767-8616-007653897915)
 
 
