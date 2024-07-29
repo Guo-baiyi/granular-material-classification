@@ -27,21 +27,25 @@ The primary goal of this project is to automate the process of particle size det
 4. Post-process and Output Results
 ![image](https://github.com/user-attachments/assets/b9fa4502-3fdb-4767-8616-007653897915)
 
-    
-1. Segment and extract features from images of granular materials.
-2. Train a CNN model to predict the average particle size and standard deviation.
-3. Use the trained model to analyze new images and provide accurate particle size predictions.
 
-##### Methodology
-- **Model Architecture**: The Segment Anything Model (SAM) was utilized for initial image segmentation. SAM is capable of identifying and segmenting individual grains within an image.
+#### Methodology
+- **Model Architecture**: The Segment Anything Model (SAM) (https://github.com/facebookresearch/segment-anything) was utilized for initial image segmentation. SAM is capable of identifying and segmenting individual grains within an image.
 - **Data Preparation**: Images were processed to ensure they were suitable for segmentation. This included resizing, normalization, and augmentation to create diverse training data.
 - **Segmentation and Measurement**: SAM was applied to segment the grains in the images. Post-segmentation, OpenCV techniques were employed to measure the size of each segmented grain. The measurements were then averaged to obtain an overall grain size for the image.
 - **Evaluation**: The segmentation accuracy and the grain size measurements were compared to ground truth values to evaluate performance.
 
-##### Results
+#### Results and Summary of Issues in Grain Size Detection with SAM
 - The segmentation approach provided detailed information about the distribution and size of individual grains within an image.
 - This method allowed for the visualization of segmented grains, aiding in the qualitative assessment of the segmentation accuracy.
 
+##### Accuracy with Small Particles (< 5mm):
+
+- SAM struggles to accurately segment and measure particles smaller than 5mm.
+- These small particles often fall below the resolution limits of the segmentation model, resulting in missed detections or inaccurate measurements.
+##### Accuracy with Large Particles (> 40mm):
+
+- For particles larger than 40mm, SAM faces difficulties due to occlusions and overlapping particles.
+- The presence of other particles in the foreground or background can cause the model to underestimate the actual size of these large particles.
 ##### Advantages
 - **Detail-Oriented**: Provides detailed insights into the size and distribution of individual grains.
 - **Flexibility**: Can handle images with varying grain sizes and distributions more effectively.
@@ -49,13 +53,21 @@ The primary goal of this project is to automate the process of particle size det
 ##### Disadvantages
 - **Complexity**: The segmentation and measurement process is more complex and computationally intensive compared to direct regression.
 - **Processing Time**: Segmenting each grain and measuring its size takes more time, especially for high-resolution images with many grains.
-    
+
+
+
+
+
 ### 2. **Regression-based Approach**:
-    - Pre-process Image
-    - Extract Features
-    - Apply Regression Model
-    - Predict Particle Size
-    - Post-process and Output Results
+1. Pre-process Image
+2. Extract Features
+3. Train and Apply Regression Model
+4. Predict Particle Size
+5. Post-process and Output Results
+
+
+
+
 ##### Methodology
 - **Model Architecture**: A modified ResNet50 convolutional neural network (CNN) was employed. The fully connected layer of the ResNet50 was adjusted to output a single continuous value representing the predicted grain size.
 - **Data Preparation**: The dataset consisted of images of granular materials with known grain sizes. These images were preprocessed to ensure consistency in size and normalized using specific mean and standard deviation values ([0.4312, 0.4072, 0.3674], [0.1762, 0.1749, 0.1686]).
