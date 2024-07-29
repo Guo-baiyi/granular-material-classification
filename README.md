@@ -15,7 +15,44 @@ The primary goal of this project is to automate the process of particle size det
 
 
 ## Particle Size Detection Approaches
-### 1. **Segmentation-based Approach**:
+
+
+### 1. **Regression-based Approach**:
+1. Pre-process Image
+2. Extract Features
+3. Train and Apply Regression Model
+4. Predict Particle Size
+5. Post-process and Output Results
+
+
+
+
+##### Methodology
+- **Model Architecture**: A modified ResNet50 convolutional neural network (CNN) was employed. The fully connected layer of the ResNet50 was adjusted to output a single continuous value representing the predicted grain size.
+- **Data Preparation**: The dataset consisted of images of granular materials with known grain sizes. These images were preprocessed to ensure consistency in size and normalized using specific mean and standard deviation values ([0.4312, 0.4072, 0.3674], [0.1762, 0.1749, 0.1686]).
+- **Training**: The model was trained to minimize the mean squared error (MSE) between the predicted and actual grain sizes. The training process involved splitting the dataset into training and validation sets, applying data augmentation techniques such as random cropping, flipping, and rotation.
+- **Evaluation**: The performance of the regression model was evaluated using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared (R²).
+
+##### Results
+- The regression model provided a continuous prediction of grain size with reasonable accuracy.
+- Metrics such as MAE and R² were used to quantify the model's performance, indicating the model's effectiveness in predicting grain size based on image data.
+
+##### Advantages
+- **Simplicity**: Direct prediction of grain size as a continuous variable simplifies the process.
+- **Efficiency**: Once trained, the model can quickly provide grain size predictions for new images.
+
+##### Disadvantages
+- **Data Dependency**: The accuracy of predictions heavily depends on the quality and quantity of the training data.
+- **Generalization**: The model might struggle to generalize to images with grain sizes significantly different from those in the training set.
+
+### 2. **Classification-based Approach**:
+    - Pre-process Image
+    - Apply Classification Model
+    - Classify Particles by Size Range
+    - Post-process and Output Results
+
+
+### 3. **Segmentation-based Approach**:
 1. Pre-process Image
 2. Apply Segmentation Model - Segment Anything Model(SAM)
 <div style="display: flex; justify-content: space-between;">
@@ -63,42 +100,9 @@ The primary goal of this project is to automate the process of particle size det
 
 
 
-### 2. **Regression-based Approach**:
-1. Pre-process Image
-2. Extract Features
-3. Train and Apply Regression Model
-4. Predict Particle Size
-5. Post-process and Output Results
 
-
-
-
-##### Methodology
-- **Model Architecture**: A modified ResNet50 convolutional neural network (CNN) was employed. The fully connected layer of the ResNet50 was adjusted to output a single continuous value representing the predicted grain size.
-- **Data Preparation**: The dataset consisted of images of granular materials with known grain sizes. These images were preprocessed to ensure consistency in size and normalized using specific mean and standard deviation values ([0.4312, 0.4072, 0.3674], [0.1762, 0.1749, 0.1686]).
-- **Training**: The model was trained to minimize the mean squared error (MSE) between the predicted and actual grain sizes. The training process involved splitting the dataset into training and validation sets, applying data augmentation techniques such as random cropping, flipping, and rotation.
-- **Evaluation**: The performance of the regression model was evaluated using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and R-squared (R²).
-
-##### Results
-- The regression model provided a continuous prediction of grain size with reasonable accuracy.
-- Metrics such as MAE and R² were used to quantify the model's performance, indicating the model's effectiveness in predicting grain size based on image data.
-
-##### Advantages
-- **Simplicity**: Direct prediction of grain size as a continuous variable simplifies the process.
-- **Efficiency**: Once trained, the model can quickly provide grain size predictions for new images.
-
-##### Disadvantages
-- **Data Dependency**: The accuracy of predictions heavily depends on the quality and quantity of the training data.
-- **Generalization**: The model might struggle to generalize to images with grain sizes significantly different from those in the training set.
-
-### 3. **Classification-based Approach**:
-    - Pre-process Image
-    - Apply Classification Model
-    - Classify Particles by Size Range
-    - Post-process and Output Results
-
-## Execution Flow
-1. **Robot Moves to Material Pile**
+## Execution Flow for real-world implementation
+1. **Innock-Robot Moves to Material Pile**
 2. **Camera Ensures 30mm Distance**
 3. **Capture RGB Image**
 4. **Process Image with Pre-trained CNN Model**
@@ -116,12 +120,6 @@ The dataset consists of images of various granular materials. Each image is labe
 2. **Model Training**: Training a CNN model using the extracted features and corresponding labels.
 3. **Prediction**: Using the trained model to predict particle size metrics for new images.
 
-## Summary of Two Approaches to Obtain Grain Size
-
-In this project, we explored two distinct approaches to obtain the grain size of granular materials using advanced computer vision techniques. These approaches include the use of regression models and segmentation methods. Below is a detailed summary of each approach.
-
-
-
 
 #### Comparative Analysis
 
@@ -131,33 +129,13 @@ In this project, we explored two distinct approaches to obtain the grain size of
 
 ### Conclusion
 
-By exploring these two approaches, the project highlights the potential and versatility of computer vision techniques in analyzing granular materials. Both methods have their unique strengths and can be applied based on the specific needs of the analysis, paving the way for further research and development in this field.
+By exploring these approaches, the project highlights the potential and versatility of computer vision techniques in analyzing granular materials. Both methods have their unique strengths and can be applied based on the specific needs of the analysis, paving the way for further research and development in this field.
 
 
 
-### Techniques and Objectives
-The proposed system will utilize the following techniques:
-1. **Segment Anything Model (SAM)**: For accurate particle segmentation in complex images.
-2. **OpenCV**: For detailed feature extraction from segmented particles.
-3. **Artificial Neural Networks (ANNs)**: For predicting particle size distribution based on extracted features.
-The objectives of this research are:
-1. To develop a comprehensive system for examining and classifying granular materials using computer vision.
-2. To validate the system with both synthetic and real-world samples.
-3. To compare the performance of the proposed system against traditional methods.
-4. To integrate the system into a user-friendly application for real-time analysis.
-
-
-### Importance in a Broader Context
-This research contributes to the broader field of material science by providing a novel approach to granular material analysis, which can be applied across various industries. The integration of computer vision and AI techniques not only enhances accuracy and efficiency but also paves the way for future advancements in automated material analysis. By reducing dependency on manual inspection and traditional methods, the proposed system aligns with the ongoing trend towards automation and digitalization in industry.
 
 
 
-### System Components
-1. **Luxonis OAK-D Pro Camera**: Provides both RGB and depth information.
-2. **Mobile Robot**: Moves the camera to the material pile.
-3. **ROS (Robot Operating System)**: Manages the robot's movement and sensor data processing.
-4. **Pre-trained CNN Model**: Predicts particle sizes from the RGB images.
-5. **Computer**: Runs the ROS nodes and processes the data.
 
 
 
