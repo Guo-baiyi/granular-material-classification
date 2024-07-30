@@ -22,6 +22,9 @@ The primary goal of this project is to automate the process of particle size det
 2. labeling grain size
     1. Labeling with granularity values extracted by SAM and opencv
     2. Labeling with the median of the product's particle size values
+
+
+
 | ID   | Product Name                       | Number Range               | Grainsize (Median) | Grainsize (OpenCV) | Photo Count |
 |------|-----------------------------------|-----------------------------|--------------------|---------------------|-------------|
 | 1    | Marmorsplitt_7-12mm               | IMG_1394-IMG_1405           | 9.5                | 10.1                | 1000        |
