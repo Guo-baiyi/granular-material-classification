@@ -140,6 +140,8 @@ The primary goal of this project is to automate the process of particle size det
 
 3. Identify and Measure Particles - OpenCV
 
+![schieferplaettchen_22-40mm_distribution](https://github.com/user-attachments/assets/994c1ed7-3df9-442c-a867-334305cf2106)
+
 
 4. Post-process and Output Results
 
