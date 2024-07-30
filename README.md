@@ -2,7 +2,8 @@
 
 ## Introduction
 
-This project aims to classify granular materials and identify particle size using deep learning techniques. I employ Convolutional Neural Networks (CNN) and the Segment Anything Model (SAM) to predict the average particle size and standard deviation from images of granular materials.
+Coarse-grained granular soils with particle sizes between 80 mm and 0.075 mm are critical construction and building materials. 
+In this research project, Convolutional Neural Networks (CNN) and the Segment Anything Model (SAM) are used to process and recognize the characteristics of the particulate materials in the photographs, in order to predict the average particle size and particle size distribution of the particulate materials.
 
 ## Complete Project Overview
 
