@@ -22,7 +22,35 @@ The primary goal of this project is to automate the process of particle size det
 2. labeling grain size
     1. Labeling with granularity values extracted by SAM and opencv
     2. Labeling with the median of the product's particle size values
+| ID   | Product Name                       | Number Range               | Grainsize (Median) | Grainsize (OpenCV) | Photo Count |
+|------|-----------------------------------|-----------------------------|--------------------|---------------------|-------------|
+| 1    | Marmorsplitt_7-12mm               | IMG_1394-IMG_1405           | 9.5                | 10.1                | 1000        |
+| 2    | Marmorkiesel_Weiss_7-15mm         | IMG_1406-IMG_1415           | 11                 | 12.3                | 1000        |
+| 3    | Marmorkiesel_Weiss_15-25mm        | IMG_1416-IMG_1425           | 20                 | 21.2                | 1000        |
+| 4    | Marmorkiesel_Weiss_25-40mm        | IMG_1426-IMG_1435           | 32.5               | 33.7                | 1000        |
+| 5    | Marmorkiesel_Weiss_40-60mm        | IMG_1436-IMG_1445           | 50                 | 51.8                | 1000        |
+| 6    | Marmorkiesel_Schwarz_40-60mm      | IMG_1446-IMG_1455           | 50                 | 51.8                | 1000        |
+| 7    | Marmorsplitt_Veronarot_9-12mm     | IMG_1457-IMG_1466           | 10.5               | 11.0                | 1000        |
+| 8    | Marmorsplitt_Donaublau_8-12mm     | IMG_1467-IMG_1476           | 10                 | 11.1                | 1000        |
+| 9    | Marmorkiesel_Gruen_15-25mm        | IMG_1477-IMG_1486           | 20                 | 21.4                | 1000        |
+| 10   | Schieferplaettchen_22-40mm        | IMG_1487-IMG_1496           | 31                 | 32.5                | 1000        |
+| 11   | Bruchsteine_Veronarot_30-60mm     | IMG_1498-IMG_1507           | 45                 | 47.2                | 1000        |
+| 12   | Quarzkies_Rund_Hell_16-32mm       | IMG_1509-IMG_1518           | 24                 | 25.6                | 1000        |
+| 13   | Quarzkies_Rund_Hell_8-16mm        | IMG_1519-IMG_1528           | 12                 | 13.2                | 1000        |
+| 14   | Kies_2-8mm                        | IMG_1529-IMG_1538           | 5                  | 5.5                 | 1000        |
+| 15   | Kies_8-16mm                       | IMG_1539-IMG_1548           | 12                 | 13.1                | 1000        |
+| 16   | Kies_16-32mm                      | IMG_1549-IMG_1558           | 24                 | 25.4                | 1000        |
+| 17   | Basaltsplitt_8-12mm               | IMG_1559-IMG_1568           | 10                 | 11.0                | 1000        |
+| 18   | Granitsplitt_8-12mm               | IMG_1569-IMG_1578           | 10                 | 10.9                | 1000        |
+| 19   | Splitt_2-5mm                      | IMG_1579-IMG_1588           | 3.5                | 3.8                 | 1000        |
+| 20   | Kies_1-3mm                        | IMG_1636-IMG_1645           | 2                  | 2.2                 | 1000        |
+
+
+
+
+
 3. Train and Apply Regression Model
+
 4. Predict Particle Size
 ![image](https://github.com/user-attachments/assets/2157a696-3fc2-41b4-b9a9-f3e24415f77e)
 ![image](https://github.com/user-attachments/assets/f88afcdb-4d6e-443d-b059-ebcb8db91332)
