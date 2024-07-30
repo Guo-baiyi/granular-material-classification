@@ -24,6 +24,10 @@ The primary goal of this project is to automate the process of particle size det
     2. Labeling with the median of the product's particle size values
 3. Train and Apply Regression Model
 4. Predict Particle Size
+![image](https://github.com/user-attachments/assets/2157a696-3fc2-41b4-b9a9-f3e24415f77e)
+![image](https://github.com/user-attachments/assets/f88afcdb-4d6e-443d-b059-ebcb8db91332)
+
+
 5. Post-process and Output Results
 <div style="display: flex; justify-content: space-between;">
     <img src="https://github.com/user-attachments/assets/7ad68d11-1312-491f-a257-441efd716114" alt="prediction_scatter_plot" width="30%"/>
