@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project aims to classify granular materials and identify particle size distribution using deep learning techniques. We employ Convolutional Neural Networks (CNN) and the Segment Anything Model (SAM) to predict the average particle size and standard deviation from images of granular materials.
+This project aims to classify granular materials and identify particle size using deep learning techniques. I employ Convolutional Neural Networks (CNN) and the Segment Anything Model (SAM) to predict the average particle size and standard deviation from images of granular materials.
 
 ## Complete Project Overview
 
