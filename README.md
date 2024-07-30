@@ -25,28 +25,30 @@ The primary goal of this project is to automate the process of particle size det
 
 
 
-| ID   | Product Name                       | Number Range               | Grainsize (Median) | Grainsize (OpenCV) | Photo Count |
-|------|-----------------------------------|-----------------------------|--------------------|---------------------|-------------|
-| 1    | Marmorsplitt_7-12mm               | IMG_1394-IMG_1405           | 9.5                | 10.1                | 1000        |
-| 2    | Marmorkiesel_Weiss_7-15mm         | IMG_1406-IMG_1415           | 11                 | 12.3                | 1000        |
-| 3    | Marmorkiesel_Weiss_15-25mm        | IMG_1416-IMG_1425           | 20                 | 21.2                | 1000        |
-| 4    | Marmorkiesel_Weiss_25-40mm        | IMG_1426-IMG_1435           | 32.5               | 33.7                | 1000        |
-| 5    | Marmorkiesel_Weiss_40-60mm        | IMG_1436-IMG_1445           | 50                 | 51.8                | 1000        |
-| 6    | Marmorkiesel_Schwarz_40-60mm      | IMG_1446-IMG_1455           | 50                 | 51.8                | 1000        |
-| 7    | Marmorsplitt_Veronarot_9-12mm     | IMG_1457-IMG_1466           | 10.5               | 11.0                | 1000        |
-| 8    | Marmorsplitt_Donaublau_8-12mm     | IMG_1467-IMG_1476           | 10                 | 11.1                | 1000        |
-| 9    | Marmorkiesel_Gruen_15-25mm        | IMG_1477-IMG_1486           | 20                 | 21.4                | 1000        |
-| 10   | Schieferplaettchen_22-40mm        | IMG_1487-IMG_1496           | 31                 | 32.5                | 1000        |
-| 11   | Bruchsteine_Veronarot_30-60mm     | IMG_1498-IMG_1507           | 45                 | 47.2                | 1000        |
-| 12   | Quarzkies_Rund_Hell_16-32mm       | IMG_1509-IMG_1518           | 24                 | 25.6                | 1000        |
-| 13   | Quarzkies_Rund_Hell_8-16mm        | IMG_1519-IMG_1528           | 12                 | 13.2                | 1000        |
-| 14   | Kies_2-8mm                        | IMG_1529-IMG_1538           | 5                  | 5.5                 | 1000        |
-| 15   | Kies_8-16mm                       | IMG_1539-IMG_1548           | 12                 | 13.1                | 1000        |
-| 16   | Kies_16-32mm                      | IMG_1549-IMG_1558           | 24                 | 25.4                | 1000        |
-| 17   | Basaltsplitt_8-12mm               | IMG_1559-IMG_1568           | 10                 | 11.0                | 1000        |
-| 18   | Granitsplitt_8-12mm               | IMG_1569-IMG_1578           | 10                 | 10.9                | 1000        |
-| 19   | Splitt_2-5mm                      | IMG_1579-IMG_1588           | 3.5                | 3.8                 | 1000        |
-| 20   | Kies_1-3mm                        | IMG_1636-IMG_1645           | 2                  | 2.2                 | 1000        |
+| ID   | Product Name                       | Number Range               | Grainsize (Median) | Grainsize (OpenCV)         | Photo Count |
+|------|------------------------------------|----------------------------|--------------------|----------------------------|-------------|
+| 1    | Marmorsplitt_7-12mm                | IMG_1394-IMG_1405          | 9.5                | 7.445                      | 1000        |
+| 2    | Marmorkiesel_Weiss_7-15mm          | IMG_1406-IMG_1415          | 11                 | 9.310                      | 1000        |
+| 3    | Marmorkiesel_Weiss_15-25mm         | IMG_1416-IMG_1425          | 20                 | 11.410 <span style="color:red">**11.410**</span>  | 1000        |
+| 4    | Marmorkiesel_Weiss_25-40mm         | IMG_1426-IMG_1435          | 32.5               | 14.605 <span style="color:red">**14.605**</span>  | 1000        |
+| 5    | Marmorkiesel_Weiss_40-60mm         | IMG_1436-IMG_1445          | 50                 | 18.345 <span style="color:red">**18.345**</span>  | 1000        |
+| 6    | Marmorkiesel_Schwarz_40-60mm       | IMG_1446-IMG_1455          | 50                 | 21.870 <span style="color:red">**21.870**</span>  | 1000        |
+| 7    | Marmorsplitt_Veronarot_9-12mm      | IMG_1457-IMG_1466          | 10.5               | 7.975                      | 1000        |
+| 8    | Marmorsplitt_Donaublau_8-12mm      | IMG_1467-IMG_1476          | 10                 | 7.965                      | 1000        |
+| 9    | Marmorkiesel_Gruen_15-25mm         | IMG_1477-IMG_1486          | 20                 | 13.590 <span style="color:red">**13.590**</span>  | 1000        |
+| 10   | Schieferplaettchen_22-40mm         | IMG_1487-IMG_1496          | 31                 | 13.895 <span style="color:red">**13.895**</span>  | 1000        |
+| 11   | Bruchsteine_Veronarot_30-60mm      | IMG_1498-IMG_1507          | 45                 | 15.990 <span style="color:red">**15.990**</span>  | 1000        |
+| 12   | Quarzkies_Rund_Hell_16-32mm        | IMG_1509-IMG_1518          | 24                 | 14.280 <span style="color:red">**14.280**</span>  | 1000        |
+| 13   | Quarzkies_Rund_Hell_8-16mm         | IMG_1519-IMG_1528          | 12                 | 9.030                      | 1000        |
+| 14   | Kies_2-8mm                         | IMG_1529-IMG_1538          | 5                  | 5.150                      | 1000        |
+| 15   | Kies_8-16mm                        | IMG_1539-IMG_1548          | 12                 | 9.345                      | 1000        |
+| 16   | Kies_16-32mm                       | IMG_1549-IMG_1558          | 24                 | 13.705 <span style="color:red">**13.705**</span>  | 1000        |
+| 17   | Basaltsplitt_8-12mm                | IMG_1559-IMG_1568          | 10                 | 8.710                      | 1000        |
+| 18   | Granitsplitt_8-12mm                | IMG_1569-IMG_1578          | 10                 | 8.580                      | 1000        |
+| 19   | Splitt_2-5mm                       | IMG_1579-IMG_1588          | 3.5                | 6.685 <span style="color:red">**6.685**</span>   | 1000        |
+| 20   | Kies_1-3mm                         | IMG_1636-IMG_1645          | 2                  | 19.305 <span style="color:red">**19.305**</span>  | 1000        |
+
+
 
 
 
