@@ -2,9 +2,11 @@
 
 ## Introduction
 
-Coarse-grained granular soils with particle sizes between 80 mm and 0.075 mm are critical construction and building materials. 
-In this research project, Convolutional Neural Networks (CNN) and the Segment Anything Model (SAM) are used to process and recognize the characteristics of the particulate materials in the photographs, in order to predict the average particle size and particle size distribution of the particulate materials.
+Coarse-grained granular soils with particle sizes between 80 mm and 0.075 mm are critical construction and building materials，often for (specific purposes such as concrete production, road base, and landscaping). In the future deployment of unmanned intelligent construction sites, accurately identifying granular material information is crucial. This includes determining particle size, material type, particle shape, and current state.
 
+This project aims to enhance the management of intelligent construction sites using mobile smart robots by designing and implementing a material recognition and classification module. This module utilizes machine learning and computer vision algorithms, integrated with the RGB-D camera installed on the mobile robots, to detect the particle size and type of granular materials.
+
+In this research project, Convolutional Neural Networks (CNN) and the Segment Anything Model (SAM) are used to process and recognize the characteristics of the particulate materials in the photographs, in order to predict the average particle size and particle size distribution of the particulate materials.
 ## Complete Project Overview
 
 ![未命名绘图 drawio (1)](https://github.com/user-attachments/assets/d07802a1-9712-4fba-b35f-c2ac5ce1ff33)
