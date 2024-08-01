@@ -1,6 +1,7 @@
 # Granular Materials Classification and Particle Size Identification
 
 ## Introduction
+![image](https://github.com/user-attachments/assets/ee42ed47-5566-43c0-ad13-aefecb03933c)
 
 Coarse-grained granular soils with particle sizes between 80 mm and 0.075 mm are critical construction and building materials，often for (specific purposes such as concrete production, road base, and landscaping). In the future deployment of unmanned intelligent construction sites, accurately identifying granular material information is crucial. This includes determining particle size, material type, particle shape, and current state.
 
