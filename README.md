@@ -13,7 +13,41 @@ In this research project, Convolutional Neural Networks (CNN) and the Segment An
 
 ![未命名绘图 drawio (1)](https://github.com/user-attachments/assets/d07802a1-9712-4fba-b35f-c2ac5ce1ff33)
 
+```plaintext
++------------------------------------------------------------+
+| 1. Initialize Environment and Set Up Device                |
+| - Install libraries, configure DepthAI camera,             |
+|   and load regression and material recognition models      |
++------------------------------------------------------------+
+                 |
+                 v
++------------------------------------------------------------+
+| 2. Capture Video Stream                                     |
+| - Start the DepthAI device and continuously capture frames  |
++------------------------------------------------------------+
+                 |
+                 v
++------------------------------------------------------------+
+| 3. Process Each Frame                                       |
+| - Convert frames to PIL images, resize, and normalize       |
+| - Prepare input for both material recognition and regression|
++------------------------------------------------------------+
+                 |
+                 v
++------------------------------------------------------------+
+| 4. Run Inference                                            |
+| - Pass image through material recognition model to get type |
+| - Pass image through regression model to predict μ, σ       |
++------------------------------------------------------------+
+                 |
+                 v
++------------------------------------------------------------+
+| 5. Display Results and Handle Input                         |
+| - Display material type and regression results (μ, σ)       |
+| - Wait for user input to end the process                    |
++------------------------------------------------------------+
 
+```
 The primary goal of this project is to automate the process of particle size detection in a material pile. This is achieved using a Luxonis OAK-D Pro camera mounted on a mobile robot. The camera's depth sensing capability ensures it maintains a fixed distance of 30mm from the material pile, capturing an RGB image at this distance. A pre-trained CNN model is then used to predict particle sizes from the captured images.
 
 
