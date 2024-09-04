@@ -13,6 +13,10 @@ In this research project, Convolutional Neural Networks (CNN) and the Segment An
 
 ![未命名绘图 drawio (1)](https://github.com/user-attachments/assets/d07802a1-9712-4fba-b35f-c2ac5ce1ff33)
 
+![flowchart drawio](https://github.com/user-attachments/assets/b7d0a55e-8f85-4d94-abcb-1159fc145b79)
+
+
+
 ```plaintext
 +------------------------------------------------------------+
 | 1. Initialize Environment and Set Up Device                |
